@@ -5,9 +5,12 @@ Studienakademie Sachsen Berufsakademie Dresden
 
 ### What is this repository for? ###
 
-* Examples included
+* Examples included 
 * v0.1
-* learn more about ```#!Latex \LaTeX ``` at [https://www.latex-project.org/](Link URL)
+* learn more about Latex at [https://www.latex-project.org/](Link URL)
+```#!Latex 
+\LaTeX 
+``` 
 
 
 ### How do I get set up? ###
