@@ -14,15 +14,14 @@ Studienakademie Sachsen Berufsakademie Dresden
 * Change author at main document
 * Change Titlepage
 
-### Examples ###
+### Examples included for ###
 
-* Examples included for:
-** Chapters, Sections, Subsections, Subsubsections
-** Images
-** Lists
-** Tables
-** References
-** Codesnippets
+* Chapters, Sections, Subsections, Subsubsections
+* Images
+* Lists
+* Tables
+* References
+* Codesnippets
 
 ### Edit and compile .bib with f.e. Citavi ###
 
