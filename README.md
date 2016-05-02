@@ -7,7 +7,7 @@ Studienakademie Sachsen Berufsakademie Dresden
 
 * Examples included 
 * v0.1
-* learn more about Latex at [https://www.latex-project.org/](Link URL)
+* learn more about Latex [here](Link https://www.latex-project.org/)
 
 ### How do I get set up? ###
 
