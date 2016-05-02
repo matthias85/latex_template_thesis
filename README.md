@@ -13,3 +13,7 @@ Studienakademie Sachsen Berufsakademie Dresden
 
 * Change author at main document
 * Change Titlepage
+
+### Edit .bib with f.e. Citavi ###
+
+* Compile bibTex in project
