@@ -1,0 +1,220 @@
+%	+++ KLASSE +++
+
+\documentclass[ngerman, pdftex, oneside, 12pt, listof=totocnumbered, titlepage, numbers=noenddot, parskip]{scrartcl}
+%	pdftex,											% PDFTex verwenden da wir ausschliesslich ein PDF erzeugen.
+%	pagesize, 										% Diese Option reicht die Papiergröße an alle Ausgabeformate weiter
+%	oneside,										% Einseitiger Druck
+%	DIV=calc,										% Errechnet einen guten Satzspiegel
+%	BCOR=1cm,										% Weil bei mir immer 1cm in der Bindung der Klemmmappe verschwindet
+%	smallheadings,									% Für etwas kleinere Überschriften
+%	12pt,											% Schriftgröße 12
+%	listof=totocnumbered,							% alle listof~ werden zum Inhaltsverzeichnis hinzugefügt
+%	titlepage,										% \maketitle erzeugt somit die Titelseite
+%	numbers=noenddot,								% keine Punkte hinter der letzten Zahl
+%	parskip											% Zeile Abstand zwischen Absätzen.
+
+
+%	+++ WEITERE EINSTELLUNGEN +++ (optionale Angaben - abhängig von gewünschten Effekten)
+
+% %Titel
+% \title {Erarbeitung von zwei unterschiedlichen Printlösungen mit werbewirksamer Gestaltung im Kontext der Applikation für Mobilgeräte “Elberadweg-App” von Ingeniuerbüro Paul}
+% %Autor
+% \author{Raiko Niederlein}
+% %Datum
+% \date{\today{}, Dresden}
+
+
+%	+++ PAKETE +++
+ 
+\usepackage[T1]{fontenc}							% ???
+\usepackage[utf8]{inputenc}							% ???
+\usepackage[ngerman]{babel}							% Babel für diverse Sprachanpassungen ngerman für neue Rechtschreibung und Silbentrennung
+\DeclareUnicodeCharacter{00A0}{ }					% no breaking spaces hack
+\usepackage[onehalfspacing]{setspace} 				% Paket um Zeilenabstände zu beeinflussen
+\usepackage{lmodern} 								% Latin Modern Fonts sind die Nachfolger von Computer Modern, den LaTeX-Standardfonts
+\usepackage{blindtext}								% erzeugen von Blindtext möglich
+\usepackage{scrhack}								% ???
+\usepackage{csquotes}								% ???
+\usepackage{fixltx2e} 								% Verbessert einige Kernkompetenzen von LaTeX2e -> ist die aktuelle LaTeX-Version
+\usepackage{
+	ellipsis,										% Korrigiert den Weißraum um Auslassungspunkte
+	ragged2e,										% Ermöglicht Flattersatz mit Silbentrennung
+	marginnote,										% Für bessere Randnotizen mit \marginnote statt \marginline
+}
+\usepackage[tracking=true]{microtype}				% ???
+\DeclareMicrotypeSet*[tracking]{my}					% ???
+	{ font = */*/*/sc/* }
+\SetTracking{ encoding = *, shape = sc }{ 45 }		% Hier wird festgelegt, dass alle Passagen in Kapitälchen automatisch leicht gesperrt werden. Das Paket soul, das ich früher empfohlen habe ist damit für diese Zwecke nicht mehr nötig.
+\usepackage{graphicx}								% Package für Bilder
+\usepackage{wrapfig}								% Package für umfließende Figuren (können Bilder sein)
+\usepackage{mdwlist}								% macht Listen kompakter
+\usepackage{paralist}								% ermöglicht Listen im text wie a) dies, b) jenes ...
+\usepackage{listings}								% ermöglicht das auflisten von Quellcode
+\renewcommand{\lstlistingname}{Quellcode}			% überschreibe den Listenbezeichner mit dem Wort Liste
+\usepackage{subcaption}								% ermöglicht Captions für einzelne Bilder von Bilderreihen
+\usepackage{float}									% Für den Textfluss bspw.
+% \renewcommand{\lstlistlistingname}{Listingverzeichnis}
+% LINKS
+\usepackage{lipsum}									% ???
+\usepackage{tocloft}								% Package für toc lof und lot manipulation
+%	titles											% ???
+\renewcommand{\cftfigpresnum}{Abbildung }			% Bezeichnung vor der Nummer im Abbildungsverzeichnis beeinflussen
+\settowidth{\cftfignumwidth}{Abbildung 10\quad}		% Abstandskorrektur wegen vorangegangener manipulation
+\usepackage[pdftitle={Praxistransferbeleg Niederlein}, pdfauthor={Raiko Niederlein}, pdfsubject={Praxistransferbeleg Marketing}, pdfcreator={LaTex}, pdfpagemode=UseOutlines, pdfdisplaydoctitle=true, pdflang=de, hypertexnames=false, pdfstartview=FitH]{hyperref}
+%	pdftitle={Praxistransferbeleg_Niederlein},		% Titel des PDF Dokuments.
+%	pdfauthor={Raiko Niederlein},					% Autor des PDF Dokuments.
+%	pdfsubject={Praxistransferbeleg Printmedien},	% Thema des PDF Dokuments.
+%	pdfcreator={LaTex},								% Erzeuger des PDF Dokuments.
+%	pdfkeywords={},									% Schlüsselwörter für das PDF.
+%	pdfpagemode=UseOutlines,						% Inhaltsverzeichnis anzeigen beim Öffnen
+%	pdfdisplaydoctitle=true,						% Dokumenttitel statt Dateiname anzeigen.
+%	pdflang=de,										% Sprache des Dokuments.
+%	hypertexnames=false,							% ???
+%	pdfstartview=FitH								% ???
+% GLOSSAR
+%\usepackage[ngerman]{translator}					% Übersetzung vorefinierter Begriffe ins Deutsche
+\usepackage[nonumberlist, acronym, acronymlists={main}, xindynoglsnumbers, toc, translate, nopostdot]{glossaries}
+%	nonumberlist,									% keine Seitenzahlen anzeigen
+%	acronym,										% Akronyme können verwendet werden
+%	section											% im Inhaltsverzeichnis auf section-Ebene erscheinen
+%	xindynoglsnumbers = xindy={glsnumbers=false}	% xindy zum indexieren (empfohlen) / lässt wohl nummern weg
+%	toc												% Einträge im Inhaltsverzeichnis
+%	translate										% Übersetzung sofern babel und geeignete Sprachen vorhanden
+%	nopostdot										% Den Punkt am Ende jeder Beschreibung deaktivieren
+%	seeautonumberlist								% hat was mit dem see attribut eines glossareintrages zu tun da dieser nur bei numberlist angezeigt wird, aber wenn man es wie hier ausschaltet benötigt man die option seeautonumberlist um die crossreference innerhalb des glossars anzuzeigen
+%\GlsSetXdyFirstLetterAfterDigits{А}				% Definiert den ersten Buchstaben des Alphabets (notwendig für xindy - funktioniert aber komischerweise nicht)
+\newcommand*{\newdualentry}[5][]{					% Abkürzungen mit Glossareintrag
+	\newglossaryentry{glos:#2}{
+		name={#4},
+		text={#3\protect\glsadd{#2}},
+		description={#5},
+		#1
+	}
+	\newacronym{#2}{#3\protect\glsadd{glos:#2}}{#4}
+}
+%\renewcommand*{\glspostdescription}{}				% Den Punkt am Ende jeder Beschreibung deaktivieren
+%\usepackage[xindy]{imakeidx}						% ???
+%\makeindex											% ???
+
+% Index erstellen
+% \makeindex -s praxistransferbeleg_sem3_printmedien.ist -t praxistransferbeleg_sem3_printmedien.alg -o praxistransferbeleg_sem3_printmedien.acr praxistransferbeleg_sem3_printmedien.acn
+% \makeindex -s praxistransferbeleg_sem3_printmedien.ist -t praxistransferbeleg_sem3_printmedien.glg -o praxistransferbeleg_sem3_printmedien.gls praxistransferbeleg_sem3_printmedien.glo
+% \makeindex -s praxistransferbeleg_sem3_printmedien.ist -t praxistransferbeleg_sem3_printmedien.slg -o praxistransferbeleg_sem3_printmedien.syi praxistransferbeleg_sem3_printmedien.syg
+\makeglossaries										% weiß der Geier was hier passiert wenn man trotz des Befehls ein Script brauch um überhaupt etwas zu sehen
+% Quellen
+\usepackage{tocbibind}								% sorgt für das Erscheinen von toc, tof, acronymverzeichnis und bib, aber bib macht er nicht...
+\usepackage[backend=biber, style=authoryear, dashed=false, maxbibnames=99]{biblatex}
+%	backend=biber,									% ???
+%	style=authoryear,								% Darstellungsmethode
+%	dashed=false,									% zieht gleiche Autoren zu einer Quelle zusammen wenn true
+%	maxbibnames=99									% ???
+\bibliography{quellen.bib}							% bindet die Quellen ein
+%\defbibheading{bibhead}{\section*{Literaturverzeichnis}} % Name des Quellenverzeichnisses, hat aber keine Auswirkung... auch nicht bei nichtvorhandener Neudefinition bei \printbib in dokument.tex
+\renewcommand*{\bibleftparen}{[} 					% ???
+\renewcommand*{\bibrightparen}{]}					% ???
+\renewcommand*{\mkbibnamefirst}{\textsc}			% Setzt die Autoren-Vornamen auf Kapitälchen 
+\renewcommand*{\mkbibnamelast}{\textsc}				% Setzt die Autoren-Nachnamen auf Kapitälchen
+\setlength\bibitemsep{7pt}							% Abstand zwischen 2 Einträgen im Verzeichnis 
+\DeclareFieldFormat{url}{\newline URL: \url{#1}}	% Formatiert die URL Angabe 
+\DeclareFieldFormat{urldate}{\newline Stand: #1} % Formatiert die URL-Date Angabe 
+% FARBEN
+\usepackage{color}									% ???
+\definecolor{blue}{rgb}{0,0,0.5}					% Definiert blau
+\definecolor{black}{rgb}{0,0,0}						% definiert schwarz
+\setkomafont{sectioning}{\normalfont\bfseries}		% Titel mit Normalschrift
+\setkomafont{captionlabel}{\normalfont\bfseries}	% Fette Beschriftungen
+\setkomafont{pageheadfoot}{\normalfont\itshape}		% Kursive Seitentitel
+\setkomafont{descriptionlabel}{\normalfont\bfseries} % Fette Beschreibungstitel
+\hypersetup{										% Farbeinstellungen für die Links im PDF Dokument
+  colorlinks=true,									% Aktivieren von farbigen Links im Dokument (keine Rahmen)
+  linkcolor=black,									% Farbe festlegen
+  citecolor=black,									% Farbe festlegen
+  filecolor=black,									% Farbe festlegen
+  menucolor=black,									% Farbe festlegen
+  urlcolor=black,									% Farbe von URL's im Dokument
+  bookmarksnumbered=true,							% Überschriftsnummerierung im PDF Inhalt anzeigen
+}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\lstset{											% lstset for the code formatting
+	backgroundcolor=\color{white},					% choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+	basicstyle=\ttfamily,							% the size and style (font) of the fonts that are used for the code
+	breakatwhitespace=false,						% sets if automatic breaks should only happen at whitespace
+	breaklines=true,								% sets automatic line breaking
+	captionpos=b,									% sets the caption-position to bottom
+	commentstyle=\color{black},					% comment style
+	deletekeywords={...},							% if you want to delete keywords from the given language
+	escapeinside={\%*}{*)},							% if you want to add LaTeX within your code
+	extendedchars=true,								% lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+	frame=single,									% adds a frame around the code
+	keepspaces=true,								% keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+	keywordstyle=\color{blue},						% keyword style
+	language=C,										% the language of the code
+	%otherkeywords={*,...},							% if you want to add more keywords to the set
+	numbers=left,									% where to put the line-numbers; possible values are (none, left, right)
+	numbersep=5pt,									% how far the line-numbers are from the code
+	numberstyle=\tiny\color{mygray},				% the style that is used for the line-numbers
+	rulecolor=\color{black},						% if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+	showspaces=false,								% show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+	showstringspaces=false,							% underline spaces within strings only
+	showtabs=false,									% show tabs within strings adding particular underscores
+	stepnumber=1,									% the step between two line-numbers. If it's 1, each line will be numbered
+	stringstyle=\color{mymauve},					% string literal style
+	tabsize=2,										% sets default tabsize to 2 spaces
+	title=\lstname,									% show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+\addto\extrasngerman{								% autoref Bezeichnungen
+  \def\figureautorefname{Abbildung}					% ???
+  \def\tableautorefname{Tabelle}					% ???
+  \def\chapterautorefname{Kapitel}					% ???
+  \def\sectionautorefname{Kapitel}					% ???
+  \def\subsectionautorefname{Kapitel}				% ???
+  \def\subsubsectionautorefname{Kapitel}			% ???
+  \def\pageautorefname{Seite}						% ???
+  \def\Hfootnoteautorefname{Fußnote}				% ???
+}
+\usepackage[titletoc,toc,page]{appendix}
+%\renewcommand{\appendixtocname}{Anhangverzeichnis}
+\renewcommand{\appendixpagename}{Anhang}
+\appendixtocoff
+\appendixtitletocoff
+\appendixheaderoff
+\appendixpageoff
+
+\newcommand{\listappendixname}{Anhangverzeichnis}
+\newlistof{appendix}{app}{\listappendixname}
+\setcounter{appdepth}{2}    
+\renewcommand{\theappendix}{\arabic{appendix}}
+\renewcommand{\cftappendixpresnum}{Anhang\space}
+\setlength{\cftbeforeappendixskip}{\baselineskip}
+\setlength{\cftappendixnumwidth}{1in}
+\newlistentry[appendix]{subappendix}{app}{1}
+\renewcommand{\thesubappendix}{\theappendix.\arabic{subappendix}}
+\renewcommand{\cftsubappendixpresnum}{Anhang\space}
+\setlength{\cftsubappendixnumwidth}{1in}
+\setlength{\cftsubappendixindent}{0em}
+
+\newcommand{\myappendix}[1]{%
+	\refstepcounter{appendix}%
+	\section*{\theappendix\space #1}%
+	\addcontentsline{app}{appendix}{\protect\numberline{\theappendix}#1}%
+	\par
+}
+\newcommand{\aref}[1]{\hyperref[#1]{Anhang~\ref{#1}}}% referenzierung extra für den Anhang (wäre sicherlich auch anders machbar gewesen aber am einfachsten und schnellsten war ein neuer Befehl :)
+
+% \newcommand{\subappendix}[1]{%
+%   \refstepcounter{subappendix}%
+%   \subsection*{\thesubappendix\space #1}%
+%   \addcontentsline{app}{subappendix}{\protect\numberline{\thesubappendix}#1}%
+% }
+\usepackage{geometry}								% nimmt erheblichen Einfluss auf den Satzspiegel (doku geometry.pdf) daher am Besten als letztes
+\geometry{
+	tmargin=20mm,									% Abstand von oben
+	bmargin=10mm,									% Abstand von unten
+	lmargin=30mm,									% Abstand von links
+	rmargin=20mm,									% Abstand von rechts
+	includefoot,									% bindet den footer des gesamten body ein, respektive die Seitenzahlen und Fußnoten
+	footnotesep=10mm								% ändert Abstand zwischen unterem Ende des Textes und dem oberen Ende der Fußzeile
+}

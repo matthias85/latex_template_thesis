@@ -1,4 +1,10 @@
+*.acn
+*.app
 *.aux
+*.bbl
+*.bcf
+*.blg
+*.glo
 *.gz
 *.log
 *.lof
@@ -6,3 +12,5 @@
 *.out
 *.pdf
 *.toc
+*.xdy
+*.xml
