@@ -3,7 +3,7 @@
 This is a latex template for the institution:
 Studienakademie Sachsen Berufsakademie Dresden
 
-Build with Texmaker 4.4.1
+Built with Texmaker 4.4.1
 
 ### What is this repository for? ###
 
