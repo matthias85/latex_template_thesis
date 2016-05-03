@@ -5,7 +5,7 @@ Studienakademie Sachsen Berufsakademie Dresden
 
 ### What is this repository for? ###
 
-* Examples included 
+* A template for writing a clean bachelor thesis with Latex
 * v0.1
 * learn more about Latex [here](Link https://www.latex-project.org/)
 
@@ -13,3 +13,16 @@ Studienakademie Sachsen Berufsakademie Dresden
 
 * Change author at main document
 * Change Titlepage
+
+### Examples included for ###
+
+* Chapters, Sections, Subsections, Subsubsections
+* Images
+* Lists
+* Tables
+* References
+* Codesnippets
+
+### Edit and compile .bib with f.e. Citavi ###
+
+* Compile bibTex in project
