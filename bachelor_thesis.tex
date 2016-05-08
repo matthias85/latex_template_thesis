@@ -5,15 +5,17 @@
 
 	% begin pagenumbering
 	\pagenumbering{Roman}
-
+	
 	% title page
 	\input{templates/titlepage}
 	
+	\setlength{\parskip}{4pt}
+	
 	% placeholder for job sheet
-	\input{templates/placeholder_sheet}
+	\input{templates/placeholder_jobsheet}
 	
 	% table of content
-	\tableofcontents 
+	\tableofcontents
 	
 	% image register
 	\listoffigures
@@ -30,6 +32,7 @@
 	% content with arabic page numbering
 	% begin with page "1"
 	\pagenumbering{arabic}
+	\setlength{\parskip}{12pt}
 		
 	% content introduction
 	\input{content/introduction}
@@ -46,8 +49,8 @@
 	% content conclution
 	\input{content/conclution}
 	
-	% appendix
-	\input{templates/appendix}
+	% appendix		
+	\input{appendix/appendix}
 	\clearpage
 
 	% literature register
@@ -55,6 +58,7 @@
 	\bibliographystyle{unsrt}
 	\bibliography{literature/literature}
 	\nocite{*}
+	\
 	
 	% sources register
 	%\input{registers/source}

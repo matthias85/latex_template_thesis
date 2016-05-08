@@ -23,7 +23,6 @@
 \usepackage{selinput}
 \usepackage{graphicx}
 \usepackage{lmodern}
-% Für den Textfluss bspw.
 
 % text spacing 
 \usepackage[onehalfspacing]{setspace}
@@ -42,30 +41,28 @@
 	germandbls={ß},
 	Euro={€}
 }
-% codeblocks
-\usepackage{listings}
-\usepackage{color}
 
+% colors
+\usepackage{color}
+\definecolor{lightgray}{rgb}{0.9,0.9,0.9}
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 
-\lstset{frame=tb,
-  language=Java,
-  aboveskip=3mm,
-  belowskip=3mm,
-  showstringspaces=false,
-  columns=flexible,
-  basicstyle={\small\ttfamily},
-  numbers=none,
-  numberstyle=\tiny\color{gray},
-  keywordstyle=\color{blue},
-  commentstyle=\color{dkgreen},
-  stringstyle=\color{mauve},
-  breaklines=true,
-  breakatwhitespace=true,
-  tabsize=3
-}
+% codeblocks
+\usepackage{listings} 
+\lstset{basicstyle=\footnotesize\ttfamily, 
+      backgroundcolor=\color{lightgray}, 
+      showstringspaces=false, 
+      linewidth=\textwidth, 
+      tabsize=3, 
+      frame=single, 
+      framerule=0pt, 
+      captionpos=b,       
+      numbers=left, 
+      numberstyle=\scriptsize, 
+      xleftmargin=20pt 
+} 
 
 % hyperlinks
 \usepackage[
@@ -93,10 +90,11 @@
 \rfoot{\thepage}
 
 \fancypagestyle{plain}{
-\fancyhf{} 
-\fancyfoot[OR]{\thepage} 
-\renewcommand{\headrulewidth}{0pt} 
-\renewcommand{\footrulewidth}{0pt}} 
+	\fancyhf{} 
+	\fancyfoot[OR]{\thepage} 
+	\renewcommand{\headrulewidth}{0pt} 
+	\renewcommand{\footrulewidth}{0pt}
+} 
 
 % footnotes
 \usepackage[hang]{footmisc}
@@ -124,7 +122,7 @@
 \setcounter{figure}{0}% 
 
 \renewcommand\thesection{\Alph{section}}% 
-\renewcommand\thefigure{\Alph{section}\Alph{figure}}} 
+\renewcommand\thefigure{\Alph{section}\arabic{figure}}} 
 
 \numberwithin{table}{section} 
 \numberwithin{figure}{section} 	
