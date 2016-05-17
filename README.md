@@ -24,11 +24,12 @@ Built with Texmaker 4.4.1
 * Images in Appendix
 * Textspacing
 * Textformats
-* Lists
+* Lists 
 * Tables
 * References
 * Footnotes, Cites
 * Codesnippets
+
 
 ### Edit .bib with f.e. Citavi and compile as usual ###
 
