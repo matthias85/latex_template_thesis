@@ -1,0 +1,58 @@
+%figures
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{placeholder_image.png}
+	\caption[Placeholder]{Placeholder.}
+	\label{fig:placeholder}
+\end{figure}
+
+%tables
+\begin{table}
+	\begin{tabular}{|l|}
+		\hline
+		asdfasdff
+	\end{tabular}
+	\caption[bla]{}
+\end{table}
+
+\begin{longtable}{|p{0.10\colfour}|p{0.4\colfour}|p{0.10\colfour}|p{0.4\colfour}|}
+	\caption[Statuscodes]{Statuscodes}
+	\label{tbl:statuscodes} \\
+	
+	\hline \multicolumn{1}{|c|}{\textbf{Code}} & 
+	\multicolumn{1}{c|}{\textbf{Beschreibung}} &
+	\multicolumn{1}{c|}{\textbf{Code}} & 
+	\multicolumn{1}{c|}{\textbf{Beschreibung}} \\ \hline
+	\endfirsthead
+	
+	\multicolumn{4}{c}%
+	{\tablename\ \thetable{} -- Fortsetzung} \\
+	\hline \multicolumn{1}{|c|}{\textbf{Code}} &
+	\multicolumn{1}{c|}{\textbf{Beschreibung}} &
+	\multicolumn{1}{c|}{\textbf{Code}} &
+	\multicolumn{1}{c|}{\textbf{Beschreibung}} \\ \hline 
+	\endhead
+
+	\hline \multicolumn{4}{|r|}{{Fortsetzung auf nächster Seite}} \\ \hline
+	\endfoot
+	
+	\hline
+	\endlastfoot
+	
+	\textbf{1xx} & \textbf{Informell} & & \\
+	100 & Continue & 101 & Switching Protocols \\
+	102 & Processing (WebDAV) & & \\
+	& & & \\
+\end{longtable}
+
+%listings
+\begin{minipage}[c]{\textwidth}
+\begin{lstlisting}[caption={Codebeispiel.},label={lst:codebeispiel_restdoc}]
+{
+	test: test,
+	testing: [
+		testing
+	]
+}
+\end{lstlisting}
+\end{minipage}
