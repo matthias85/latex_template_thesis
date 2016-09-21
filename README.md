@@ -1,35 +1,28 @@
-# Bachelor Thesis BA Dresden#
+# Bachelor Thesis BA Dresden
 
-This is a latex template for the institution:
-Studienakademie Sachsen Berufsakademie Dresden
+This is a latex template for thesis.
+Built with Texmaker 4.4.1 and MikTex
 
-Built with Texmaker 4.4.1
-
-### What is this repository for? ###
+## What is this repository for?
 
 * A LaTeX template for writing a clean bachelor thesis with LaTeX
-* v0.1
+* v0.5
 
 * learn more about LaTeX at [https://www.latex-project.org/](https://www.latex-project.org/)
 
-### How do I get set up? ###
-
-* Change author at main document
-* Change Titlepage
-
-### Examples included for ###
+## Examples included for
 
 * Chapters, Sections, Subsections, Subsubsections
 * Images in Text
 * Images in Appendix
 * Textspacing
 * Textformats
-* Lists
+* Lists 
 * Tables
 * References
 * Footnotes, Cites
 * Codesnippets
 
-### Edit .bib with f.e. Citavi and compile as usual ###
+Lizence
 
-* Compile bibTex in editor
+MIT

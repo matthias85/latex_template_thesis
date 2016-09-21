@@ -1,72 +1,106 @@
+% metainformation for titlepage
+\title{Title}
+\author{LastName, FirstName}
+\date{\today}
+
+% preamble, packages
 \input{templates/preamble.tex}
 
-% document
+% bibliography and citation styles
+\input{biblatex_style/biblatex_style.tex}
+
+% main document
 \begin{document}
 
 	% begin pagenumbering
 	\pagenumbering{Roman}
+	\clearpage
 	
 	% title page
 	\input{templates/titlepage}
+	\clearpage
 	
-	\setlength{\parskip}{4pt}
+	% dedication and cites
+	\pagenumbering{gobble}
+	\input{templates/cites}
+	\clearpage
 	
 	% placeholder for job sheet
 	\input{templates/placeholder_jobsheet}
+	\clearpage
 	
+	% abstract
+	\input{templates/abstract}
+	\clearpage
+	
+	\pagenumbering{Roman}
+	\setcounter{page}{5}
 	% table of content
 	\tableofcontents
+	\clearpage
 	
 	% image register
 	\listoffigures
+	\clearpage
 	
 	% abbreviations register
-	\include{templates/abbreviations}
+	\input{templates/abbreviations}
+	\clearpage
 	
-	% symbols register	
+	% symbols register
 	
 	% table register
 	\listoftables
 	\clearpage
 	
-	% content with arabic page numbering
-	% begin with page "1"
+	% content with arabic page numbering, begin with page "1"
 	\pagenumbering{arabic}
-	\setlength{\parskip}{12pt}
 		
 	% content introduction
 	\input{content/introduction}
+	\clearpage
 	
 	% content chapters
 	\input{content/chapter_section_subsection}
-	\input{content/textspacing}
-	\input{content/formatting}
-	\input{content/figure}
-	\input{content/table}
-	\input{content/list}
-	\input{content/code}	
+	\clearpage
 	
-	% content conclution
 	\input{content/conclution}
+	\clearpage
 	
-	% appendix		
+	% test_files for registers
+	%\input{templates/test_tables}
+	%\input{templates/test_figures}
+	%\input{templates/test_all}
+	
+	% begin appendix
 	\input{content/appendix}
 	\clearpage
-
-	% literature register
-	% show all sources with nocite
-	\bibliographystyle{unsrt}
-	\bibliography{literature/literature}
-	\nocite{*}
-	\
+ 
+	% end appendix
+	\postappendix
+	% add entry "appendix" to main tableofcontent
+	% TODO set pagenumber, if document is final 
+	\clearpage
+	\addtocontents{toc}{\protect\contentsline{chapter}{Anhang}{0}{\@currentHref}}
 	
-	% sources register
-	%\input{registers/source}
+	% literature register, show all sources with "\nocite{*}"
+	\fancyhead[l]{\slshape LITERATURVERZEICHNIS}
+	\printbibliography[title=Literaturverzeichnis]
+	\addcontentsline{toc}{chapter}{Literaturverzeichnis}
+	\clearpage
+	\fancyhead[l]{\slshape \leftmark}
 	
 	% declaration of academic honesty
-	\clearpage
 	\pagenumbering{gobble}
 	\input{templates/declaration}
 	\addcontentsline{toc}{chapter}{Eidesstattliche Erklärung}
+	\clearpage
 	
+	\fancyhead{}
+	\renewcommand{\headrulewidth}{0pt}
+	\input{templates/etikett}
+	\clearpage
+	
+	\input{templates/theses}
+	\clearpage
 \end{document}

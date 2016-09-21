@@ -1,5 +1,31 @@
-\chapter{Tables}
-\label{ch:tables}
+\section{Tables}
+\label{sec:tables}
 
-Das ist eine Tabelle.
-
+	Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+	
+	\begin{longtable}[\textwidth]{|p{0.2\colthree}|p{0.6\colthree}|p{0.2\colthree}|}	
+		\hline \multicolumn{1}{|c|}{\textbf{Feld}} & 
+		\multicolumn{1}{c|}{\textbf{Beschreibung}} &
+		\multicolumn{1}{c|}{\textbf{Beispiel}} \\ \hline
+		\endfirsthead
+		
+		\hline \multicolumn{1}{|c|}{\textbf{Field}} &
+		\multicolumn{1}{c|}{\textbf{Description}} &
+		\multicolumn{1}{c|}{\textbf{Example}} \\ \hline 
+		\endhead
+		
+		\hline \multicolumn{3}{|r|}{{Fortsetzung auf nächster Seite}}
+		\\ \hline
+		\multicolumn{3}{c}%
+		{\vspace{-3mm}} \\
+		\multicolumn{3}{c}%
+		{\tablename\ \thetable{}: Request-Header-Felder. \cite[Quelle: ][]{GBSLeipzig.2013}.}
+		\endfoot
+		
+		\hline
+		\caption[Request-Header-Felder]{Request-Header-Felder. \cite[Quelle: ][]{GBSLeipzig.2013}.}
+		\label{tbl:request_header_felder}
+		\endlastfoot
+		
+		Accept & Welche Dateitypen der Browser verarbeiten kann. Laut RFC 2616, Abschnitt 14 muss der Server den HTTP-Statuscode 406 Not acceptable senden, falls er keinen der „akzeptablen“ Dateitypen bereithält und über Content Negotiation senden kann. Fehlt das Accept-Feld, so bedeutet dies, dass der Client alle Dateitypen akzeptiert. Bei diesem Beispiel wird der Server bei einer Anfrage „foo“ aus einer Auswahl von foo.html und foo.txt die Datei foo.html senden, da sie dem bevorzugten MIME-Typ entspricht (text/html). & Accept: text/html, application/xhtml+xml, application/xml; q=0.9,*/*;q=0.8 \\
+	\end{longtable}
