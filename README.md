@@ -11,16 +11,17 @@ Built with Texmaker 4.4.1 and MikTex
 ## Examples included for
 
 * Chapters, Sections, Subsections, Subsubsections
-* Images in Text
-* Images in Appendix
-* Textspacing
-* Textformats
-* Lists 
+* Images in text
+* Images in appendix
+* Textformatting
+* Lists
 * Tables
+* Codesnippets
 * References
 * Footnotes, Cites
-* Codesnippets
 
-Lizence
+* Bibliography and citation style files included
+
+## License
 
 MIT
