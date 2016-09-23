@@ -1,13 +1,11 @@
-# Bachelor Thesis BA Dresden
+# Latex Template Thesis
 
 This is a latex template for thesis.
 Built with Texmaker 4.4.1 and MikTex
 
 ## What is this repository for?
 
-* A LaTeX template for writing a clean bachelor thesis with LaTeX
-* v0.5
-
+* A LaTeX template for writing a clean thesis with LaTeX
 * learn more about LaTeX at [https://www.latex-project.org/](https://www.latex-project.org/)
 
 ## Examples included for
